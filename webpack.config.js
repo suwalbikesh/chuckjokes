@@ -9,7 +9,7 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -21,13 +21,24 @@ module.exports = {
       { test: /\.txt$/, use: 'raw-loader' },
       //to convert css files to js
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader'],
       },
       //to convert image files
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: 'file-loader?name=./images/[name].[ext]',
+        test: /\.(gif|png|jpe?g|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'public/images/[name]-[hash].[ext]',
+        },
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000,
+          name: 'public/images/[name]-[hash].[ext]',
+        },
       },
     ],
   },

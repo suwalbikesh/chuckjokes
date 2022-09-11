@@ -1,0 +1,46 @@
+body,
+html {
+  height: 100%;
+}
+
+/* The hero image */
+.header-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/header.png');
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.header-text {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/header.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.header-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header-text button:hover {
+  background-color: #555;
+  color: white;
+}
